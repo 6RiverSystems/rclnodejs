@@ -12,7 +12,7 @@ jobs:
       - sixrs-gke/setup-private-npm
       - run:
           name: Install Dependencies
-          command: sudo apt-get install ros-iron-desktop -y && npm ci
+          command: sudo sh -c 'echo "deb http://packages.ros.org/ros/ubuntu $(lsb_release -sc) main" > /etc/apt/sources.list.d/ros-latest.list' && curl -s https://raw.githubusercontent.com/ros/rosdistro/master/ros.asc | sudo apt-key add - && sudo apt-get update && sudo apt-get install ros-iron-desktop -y && npm ci
       - sixrs-gke/run-release
       - persist_to_workspace:
           root: ./
