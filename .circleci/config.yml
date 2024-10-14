@@ -6,7 +6,7 @@ orbs:
 jobs:
   build:
     docker:
-      - image: circleci/node:20.15.0
+      - image: cimg/node:20.15.0
     steps:
       - checkout
       - sixrs-gke/setup-private-npm
@@ -21,7 +21,7 @@ jobs:
 
   publish:
     docker:
-      - image: circleci/node:20.15.0
+      - image: cimg/node:20.15.0
     steps:
       - attach_workspace:
           at: ./
