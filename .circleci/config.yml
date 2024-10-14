@@ -16,22 +16,12 @@ jobs:
       - sixrs-gke/run-release
       - run:
           name: install
-          command: source /opt/ros/iron/setup.bash && npm ci
+          command: source /opt/ros/iron/setup.bash && npm ci && npm publish
       - persist_to_workspace:
           root: ./
           paths:
             - .
 
-  publish:
-    docker:
-      - image: cimg/node:20.15.0
-    steps:
-      - attach_workspace:
-          at: ./
-      - sixrs-gke/setup-private-npm
-      - run:
-          name: npm publish
-          command: source /opt/ros/iron/setup.bash && npm publish
   test:
     docker:
       - image: ros:kinetic-ros-core-xenial
@@ -76,8 +66,3 @@ workflows:
       #     context: 6rs-circle
       #     requires:
       #       - build
-      - publish:
-          context: 6rs-circle
-          requires:
-            - build
-            # - test
