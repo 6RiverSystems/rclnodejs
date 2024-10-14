@@ -12,7 +12,7 @@ jobs:
       - sixrs-gke/setup-private-npm
       - run:
           name: Install Dependencies
-          command: npm ci
+          command: apt-get install ros-iron-desktop -y && npm ci
       - sixrs-gke/run-release
       - persist_to_workspace:
           root: ./
