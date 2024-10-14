@@ -303,11 +303,21 @@ function saveMsgConstructorAsTSD(rosMsgInterface, fd) {
   const type = rosMsgInterface.type();
   const msgName = type.interfaceName;
 
+  fs.writeSync(fd, `      export interface ${msgName}Constants {\n`);
+  for (const constant of rosMsgInterface.ROSMessageDef.constants) {
+    if(primitiveType2JSName(constant.type) === "string"){
+      fs.writeSync(fd, `        ${constant.name} = "${constant.value}";\n`);
+    } else {
+      fs.writeSync(fd, `        ${constant.name} = ${constant.value};\n`);
+    }
+  }
+  fs.writeSync(fd, '      }\n');
+
+
   fs.writeSync(fd, `      export interface ${msgName}Constructor {\n`);
 
   for (const constant of rosMsgInterface.ROSMessageDef.constants) {
-    const constantType = primitiveType2JSName(constant.type);
-    fs.writeSync(fd, `        readonly ${constant.name}: ${constantType};\n`);
+    s.writeSync(fd, `        readonly ${constant.name}: ${msgName}Constants.${constant.name};\n`);
   }
 
   fs.writeSync(fd, `        new(other?: ${msgName}): ${msgName};\n`);
