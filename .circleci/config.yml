@@ -12,8 +12,11 @@ jobs:
       - sixrs-gke/setup-private-npm
       - run:
           name: Install Dependencies
-          command:  curl -o /tmp/nodejs.deb https://deb.nodesource.com/node_20.x/pool/main/n/nodejs/nodejs_20.15.1-1nodesource1_$(dpkg --print-architecture).deb && apt-get update && apt-get install -y /tmp/nodejs.deb && npm ci
+          command:  curl -o /tmp/nodejs.deb https://deb.nodesource.com/node_20.x/pool/main/n/nodejs/nodejs_20.15.1-1nodesource1_$(dpkg --print-architecture).deb && apt-get update && apt-get install -y /tmp/nodejs.deb
       - sixrs-gke/run-release
+      - run:
+          name: install
+          command: npm ci
       - persist_to_workspace:
           root: ./
           paths:
