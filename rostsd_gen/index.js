@@ -317,7 +317,7 @@ function saveMsgConstructorAsTSD(rosMsgInterface, fd) {
   fs.writeSync(fd, `      export interface ${msgName}Constructor {\n`);
 
   for (const constant of rosMsgInterface.ROSMessageDef.constants) {
-    s.writeSync(fd, `        readonly ${constant.name}: ${msgName}Constants.${constant.name};\n`);
+    fs.writeSync(fd, `        readonly ${constant.name}: ${msgName}Constants.${constant.name};\n`);
   }
 
   fs.writeSync(fd, `        new(other?: ${msgName}): ${msgName};\n`);
