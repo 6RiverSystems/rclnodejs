@@ -40,10 +40,13 @@ async function generateAll() {
 
   // write interfaces.d.ts file
   const interfacesFilePath = path.join(__dirname, '../types/interfaces.d.ts');
+  const classesFilePath = path.join(__dirname, '../types/index.js');
   const fd = fs.openSync(interfacesFilePath, 'w');
-  savePkgInfoAsTSD(pkgInfos, fd);
+  const jfd = fs.openSync(classesFilePath, 'w');
+  savePkgInfoAsTSD(pkgInfos, fd, jfd);
   await wait(500); // hack to avoid random segfault
   fs.closeSync(fd);
+  fs.closeSync(jfd);
 }
 
 // scan generated files, i.e., rootDir, and collect pkg and ROS2 interface info
@@ -88,7 +91,7 @@ function getPkgInfos(rootDir) {
   return pkgInfos;
 }
 
-function savePkgInfoAsTSD(pkgInfos, fd) {
+function savePkgInfoAsTSD(pkgInfos, fd, jfd) {
   const messagesMap = {
     string: 'string',
   };
@@ -120,7 +123,7 @@ function savePkgInfoAsTSD(pkgInfos, fd) {
         if (isMsgInterface(rosInterface)) {
           // create message interface
           saveMsgAsTSD(rosInterface, fd);
-          saveMsgConstructorAsTSD(rosInterface, fd);
+          saveMsgConstructorAsTSD(rosInterface, fd, jfd);
           messagesMap[fullInterfaceName] = fullInterfacePath;
         } else if (isSrvInterface(rosInterface)) {
           if (
@@ -160,6 +163,8 @@ function savePkgInfoAsTSD(pkgInfos, fd) {
     // close pkg level namespace declare
     fs.writeSync(fd, '  }\n\n');
   }
+
+  fs.writeSync(jfd, 'module.exports = {\n')
 
   // write messages type mappings
   fs.writeSync(fd, '  type MessagesMap = {\n');
@@ -299,15 +304,17 @@ function saveMsgFieldsAsTSD(
   }
 }
 
-function saveMsgConstructorAsTSD(rosMsgInterface, fd) {
+function saveMsgConstructorAsTSD(rosMsgInterface, fd, jfd) {
   const type = rosMsgInterface.type();
   const msgName = type.interfaceName;
 
   if(rosMsgInterface.ROSMessageDef.constants.length > 0){
     fs.writeSync(fd, `      export enum ${msgName}Constants {\n`);
+    fs.writeSync(jfd,`class ${msgName}Constants {}\n`)
     for (const constant of rosMsgInterface.ROSMessageDef.constants) {
       if(primitiveType2JSName(constant.type) === "string"){
         fs.writeSync(fd, `        ${constant.name} = "${constant.value}",\n`);
+        fs.writeSync(jfd,`  ${msgName}Constants.${constant.name} = ${constant.value}\n`)
       } else {
         fs.writeSync(fd, `        ${constant.name} = ${constant.value},\n`);
       }
