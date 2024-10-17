@@ -16,28 +16,11 @@ jobs:
       - sixrs-gke/run-release
       - run:
           name: install
-          command: source /opt/ros/iron/setup.bash && npm ci && && npm run build && npm run test && npm publish
+          command: source /opt/ros/iron/setup.bash && npm ci && npm run build && npm run test && npm publish
       - persist_to_workspace:
           root: ./
           paths:
             - .
-
-  test:
-    docker:
-      - image: osrf/ros:iron-desktop
-        environment:
-          NODE_ENV: test
-          CMAKE_PREFIX_PATH: /opt/ros/iron
-          ROS_PACKAGE_PATH: /opt/ros/iron/share
-    steps:
-      - attach_workspace:
-          at: ./
-      - run:
-          name: setup node and run tests
-          command: |
-            curl -o /tmp/nodejs.deb https://deb.nodesource.com/node_20.x/pool/main/n/nodejs/nodejs_20.15.1-1nodesource1_$(dpkg --print-architecture).deb && apt-get update && apt-get install -y /tmp/nodejs.deb && \
-            source /opt/ros/iron/setup.bash && \
-            npm run test
 
 workflows:
   version: 2
