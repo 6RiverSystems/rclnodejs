@@ -40,7 +40,7 @@ async function generateAll() {
 
   // write interfaces.d.ts file
   const interfacesFilePath = path.join(__dirname, '../types/interfaces.d.ts');
-  const classesFilePath = path.join(__dirname, '../types/index.js');
+  const classesFilePath = path.join(__dirname, '../types/interfaces.js');
   const fd = fs.openSync(interfacesFilePath, 'w');
   const jfd = fs.openSync(classesFilePath, 'w');
   savePkgInfoAsTSD(pkgInfos, fd, jfd);
@@ -97,6 +97,7 @@ function savePkgInfoAsTSD(pkgInfos, fd, jfd) {
   };
   const servicesMap = {};
   const actionsMap = {};
+  const constMap = {}
 
   fs.writeSync(fd, '/* eslint-disable camelcase */\n');
   fs.writeSync(fd, '/* eslint-disable max-len */\n');
@@ -124,6 +125,17 @@ function savePkgInfoAsTSD(pkgInfos, fd, jfd) {
           // create message interface
           saveMsgAsTSD(rosInterface, fd);
           saveMsgConstructorAsTSD(rosInterface, fd, jfd);
+          if(rosInterface.ROSMessageDef.constants.length > 0){
+            if(!constMap[type.pkgName]){
+              constMap[type.pkgName] = {}
+            }
+            if(!constMap[type.pkgName][type.subFolder]){
+              constMap[type.pkgName][type.subFolder] = []
+            }
+            if(!constMap[type.pkgName][type.subFolder].includes(type.interfaceName)){
+              constMap[type.pkgName][type.subFolder].push(type.interfaceName)
+            }
+          }
           messagesMap[fullInterfaceName] = fullInterfacePath;
         } else if (isSrvInterface(rosInterface)) {
           if (
@@ -165,6 +177,19 @@ function savePkgInfoAsTSD(pkgInfos, fd, jfd) {
   }
 
   fs.writeSync(jfd, 'module.exports = {\n')
+  Object.keys(constMap).forEach(pkgName => {
+    fs.writeSync(jfd, `  ${pkgName}: {\n`);
+    Object.keys(constMap[pkgName]).forEach(subFolder => {
+      fs.writeSync(jfd, `    ${subFolder}: {\n`);
+      for (const interfaceName of constMap[pkgName][subFolder]){
+        fs.writeSync(jfd, `      ${interfaceName}Constants: ${pkgName}_${subFolder}_${interfaceName}Constants,\n`);
+      }
+      fs.writeSync(jfd, `    },\n`);
+    })
+    fs.writeSync(jfd, `  },\n`);
+  })
+  fs.writeSync(jfd, `};\n`);
+  
 
   // write messages type mappings
   fs.writeSync(fd, '  type MessagesMap = {\n');
@@ -306,20 +331,24 @@ function saveMsgFieldsAsTSD(
 
 function saveMsgConstructorAsTSD(rosMsgInterface, fd, jfd) {
   const type = rosMsgInterface.type();
+  const pkgName = type.pkgName;
+  const subFolder = type.subFolder;
   const msgName = type.interfaceName;
 
   if(rosMsgInterface.ROSMessageDef.constants.length > 0){
     fs.writeSync(fd, `      export enum ${msgName}Constants {\n`);
-    fs.writeSync(jfd,`class ${msgName}Constants {}\n`)
+    fs.writeSync(jfd,`class ${pkgName}_${subFolder}_${msgName}Constants {}\n`)
     for (const constant of rosMsgInterface.ROSMessageDef.constants) {
       if(primitiveType2JSName(constant.type) === "string"){
         fs.writeSync(fd, `        ${constant.name} = "${constant.value}",\n`);
-        fs.writeSync(jfd,`  ${msgName}Constants.${constant.name} = ${constant.value}\n`)
+        fs.writeSync(jfd,`${pkgName}_${subFolder}_${msgName}Constants.${constant.name} = "${constant.value}"\n`)
       } else {
         fs.writeSync(fd, `        ${constant.name} = ${constant.value},\n`);
+        fs.writeSync(jfd,`${pkgName}_${subFolder}_${msgName}Constants.${constant.name} = ${constant.value}\n`)
       }
     }
     fs.writeSync(fd, '      }\n');
+    fs.writeSync(jfd, '\n');
   }
 
 
@@ -618,3 +647,5 @@ const tsdGenerator = {
 };
 
 module.exports = tsdGenerator;
+
+generateAll()
