@@ -16,7 +16,7 @@ jobs:
       - sixrs-gke/run-release
       - run:
           name: install
-          command: source /opt/ros/iron/setup.bash && npm ci && npm run build && npm run test && npm publish
+          command: apt-get install ros-iron-test-msgs && source /opt/ros/iron/setup.bash && npm ci && npm run build && npm run test && npm publish
       - persist_to_workspace:
           root: ./
           paths:
