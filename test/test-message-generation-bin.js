@@ -67,9 +67,8 @@ describe('rclnodejs generate-messages binary-script tests', function () {
     });
 
     let tgz;
-    const regex = /^.*rclnodejs-\d+.\d+.\d+.tgz/;
+    const regex = /^.*rclnodejs-\d+.\d+.\d+.*.tgz/;
     for (let file of fs.readdirSync(this.tmpPkg)) {
-      console.log(file)
       if (file.match(regex)) {
         tgz = file;
         break;
