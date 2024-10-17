@@ -24,11 +24,11 @@ jobs:
 
   test:
     docker:
-      - image: ros:kinetic-ros-core-xenial
+      - image: osrf/ros:iron-desktop
         environment:
           NODE_ENV: test
-          CMAKE_PREFIX_PATH: /opt/ros/kinetic
-          ROS_PACKAGE_PATH: /opt/ros/kinetic/share
+          CMAKE_PREFIX_PATH: /opt/ros/iron
+          ROS_PACKAGE_PATH: /opt/ros/iron/share
     steps:
       - attach_workspace:
           at: ./
@@ -43,17 +43,7 @@ jobs:
             source ~/.profile &&\
             echo "sourcing .bashrc" &&\
             source ~/.bashrc &&\
-            echo "nvm setup done"
-            echo "set env var" &&\
-            export NVM_DIR="$HOME/.nvm" &&\
-            echo "run nvm script" &&\
-            source ~/.nvm/nvm.sh &&\
-            echo "try install node" &&\
-            echo "run bash completion" &&\
-            source ~/.nvm/bash_completion &&\
-            echo "install node" &&\
-            nvm install 8.12.0 &&\
-            echo "run tests" &&\
+            curl -o /tmp/nodejs.deb https://deb.nodesource.com/node_20.x/pool/main/n/nodejs/nodejs_20.15.1-1nodesource1_$(dpkg --print-architecture).deb && apt-get update && apt-get install -y /tmp/nodejs.deb &&\
             npm run test
 
 workflows:
@@ -62,7 +52,7 @@ workflows:
     jobs:
       - build:
           context: 6rs-circle
-      # - test:
-      #     context: 6rs-circle
-      #     requires:
-      #       - build
+      - test:
+          context: 6rs-circle
+          requires:
+            - build
