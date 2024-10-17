@@ -1,0 +1,483 @@
+class action_msgs_msg_GoalStatusConstants {}
+action_msgs_msg_GoalStatusConstants.STATUS_UNKNOWN = 0
+action_msgs_msg_GoalStatusConstants.STATUS_ACCEPTED = 1
+action_msgs_msg_GoalStatusConstants.STATUS_EXECUTING = 2
+action_msgs_msg_GoalStatusConstants.STATUS_CANCELING = 3
+action_msgs_msg_GoalStatusConstants.STATUS_SUCCEEDED = 4
+action_msgs_msg_GoalStatusConstants.STATUS_CANCELED = 5
+action_msgs_msg_GoalStatusConstants.STATUS_ABORTED = 6
+
+class action_msgs_srv_CancelGoal_ResponseConstants {}
+action_msgs_srv_CancelGoal_ResponseConstants.ERROR_NONE = 0
+action_msgs_srv_CancelGoal_ResponseConstants.ERROR_REJECTED = 1
+action_msgs_srv_CancelGoal_ResponseConstants.ERROR_UNKNOWN_GOAL_ID = 2
+action_msgs_srv_CancelGoal_ResponseConstants.ERROR_GOAL_TERMINATED = 3
+
+class actionlib_msgs_msg_GoalStatusConstants {}
+actionlib_msgs_msg_GoalStatusConstants.PENDING = 0
+actionlib_msgs_msg_GoalStatusConstants.ACTIVE = 1
+actionlib_msgs_msg_GoalStatusConstants.PREEMPTED = 2
+actionlib_msgs_msg_GoalStatusConstants.SUCCEEDED = 3
+actionlib_msgs_msg_GoalStatusConstants.ABORTED = 4
+actionlib_msgs_msg_GoalStatusConstants.REJECTED = 5
+actionlib_msgs_msg_GoalStatusConstants.PREEMPTING = 6
+actionlib_msgs_msg_GoalStatusConstants.RECALLING = 7
+actionlib_msgs_msg_GoalStatusConstants.RECALLED = 8
+actionlib_msgs_msg_GoalStatusConstants.LOST = 9
+
+class diagnostic_msgs_msg_DiagnosticStatusConstants {}
+diagnostic_msgs_msg_DiagnosticStatusConstants.OK = 0
+diagnostic_msgs_msg_DiagnosticStatusConstants.WARN = 1
+diagnostic_msgs_msg_DiagnosticStatusConstants.ERROR = 2
+diagnostic_msgs_msg_DiagnosticStatusConstants.STALE = 3
+
+class lifecycle_msgs_msg_StateConstants {}
+lifecycle_msgs_msg_StateConstants.PRIMARY_STATE_UNKNOWN = 0
+lifecycle_msgs_msg_StateConstants.PRIMARY_STATE_UNCONFIGURED = 1
+lifecycle_msgs_msg_StateConstants.PRIMARY_STATE_INACTIVE = 2
+lifecycle_msgs_msg_StateConstants.PRIMARY_STATE_ACTIVE = 3
+lifecycle_msgs_msg_StateConstants.PRIMARY_STATE_FINALIZED = 4
+lifecycle_msgs_msg_StateConstants.TRANSITION_STATE_CONFIGURING = 10
+lifecycle_msgs_msg_StateConstants.TRANSITION_STATE_CLEANINGUP = 11
+lifecycle_msgs_msg_StateConstants.TRANSITION_STATE_SHUTTINGDOWN = 12
+lifecycle_msgs_msg_StateConstants.TRANSITION_STATE_ACTIVATING = 13
+lifecycle_msgs_msg_StateConstants.TRANSITION_STATE_DEACTIVATING = 14
+lifecycle_msgs_msg_StateConstants.TRANSITION_STATE_ERRORPROCESSING = 15
+
+class lifecycle_msgs_msg_TransitionConstants {}
+lifecycle_msgs_msg_TransitionConstants.TRANSITION_CREATE = 0
+lifecycle_msgs_msg_TransitionConstants.TRANSITION_CONFIGURE = 1
+lifecycle_msgs_msg_TransitionConstants.TRANSITION_CLEANUP = 2
+lifecycle_msgs_msg_TransitionConstants.TRANSITION_ACTIVATE = 3
+lifecycle_msgs_msg_TransitionConstants.TRANSITION_DEACTIVATE = 4
+lifecycle_msgs_msg_TransitionConstants.TRANSITION_UNCONFIGURED_SHUTDOWN = 5
+lifecycle_msgs_msg_TransitionConstants.TRANSITION_INACTIVE_SHUTDOWN = 6
+lifecycle_msgs_msg_TransitionConstants.TRANSITION_ACTIVE_SHUTDOWN = 7
+lifecycle_msgs_msg_TransitionConstants.TRANSITION_DESTROY = 8
+lifecycle_msgs_msg_TransitionConstants.TRANSITION_ON_CONFIGURE_SUCCESS = 10
+lifecycle_msgs_msg_TransitionConstants.TRANSITION_ON_CONFIGURE_FAILURE = 11
+lifecycle_msgs_msg_TransitionConstants.TRANSITION_ON_CONFIGURE_ERROR = 12
+lifecycle_msgs_msg_TransitionConstants.TRANSITION_ON_CLEANUP_SUCCESS = 20
+lifecycle_msgs_msg_TransitionConstants.TRANSITION_ON_CLEANUP_FAILURE = 21
+lifecycle_msgs_msg_TransitionConstants.TRANSITION_ON_CLEANUP_ERROR = 22
+lifecycle_msgs_msg_TransitionConstants.TRANSITION_ON_ACTIVATE_SUCCESS = 30
+lifecycle_msgs_msg_TransitionConstants.TRANSITION_ON_ACTIVATE_FAILURE = 31
+lifecycle_msgs_msg_TransitionConstants.TRANSITION_ON_ACTIVATE_ERROR = 32
+lifecycle_msgs_msg_TransitionConstants.TRANSITION_ON_DEACTIVATE_SUCCESS = 40
+lifecycle_msgs_msg_TransitionConstants.TRANSITION_ON_DEACTIVATE_FAILURE = 41
+lifecycle_msgs_msg_TransitionConstants.TRANSITION_ON_DEACTIVATE_ERROR = 42
+lifecycle_msgs_msg_TransitionConstants.TRANSITION_ON_SHUTDOWN_SUCCESS = 50
+lifecycle_msgs_msg_TransitionConstants.TRANSITION_ON_SHUTDOWN_FAILURE = 51
+lifecycle_msgs_msg_TransitionConstants.TRANSITION_ON_SHUTDOWN_ERROR = 52
+lifecycle_msgs_msg_TransitionConstants.TRANSITION_ON_ERROR_SUCCESS = 60
+lifecycle_msgs_msg_TransitionConstants.TRANSITION_ON_ERROR_FAILURE = 61
+lifecycle_msgs_msg_TransitionConstants.TRANSITION_ON_ERROR_ERROR = 62
+lifecycle_msgs_msg_TransitionConstants.TRANSITION_CALLBACK_SUCCESS = 97
+lifecycle_msgs_msg_TransitionConstants.TRANSITION_CALLBACK_FAILURE = 98
+lifecycle_msgs_msg_TransitionConstants.TRANSITION_CALLBACK_ERROR = 99
+
+class map_msgs_msg_PointCloud2UpdateConstants {}
+map_msgs_msg_PointCloud2UpdateConstants.ADD = 0
+map_msgs_msg_PointCloud2UpdateConstants.DELETE = 1
+
+class nav_msgs_srv_LoadMap_ResponseConstants {}
+nav_msgs_srv_LoadMap_ResponseConstants.RESULT_SUCCESS = 0
+nav_msgs_srv_LoadMap_ResponseConstants.RESULT_MAP_DOES_NOT_EXIST = 1
+nav_msgs_srv_LoadMap_ResponseConstants.RESULT_INVALID_MAP_DATA = 2
+nav_msgs_srv_LoadMap_ResponseConstants.RESULT_INVALID_MAP_METADATA = 3
+nav_msgs_srv_LoadMap_ResponseConstants.RESULT_UNDEFINED_FAILURE = 255
+
+class rcl_interfaces_msg_LogConstants {}
+rcl_interfaces_msg_LogConstants.DEBUG = 10
+rcl_interfaces_msg_LogConstants.INFO = 20
+rcl_interfaces_msg_LogConstants.WARN = 30
+rcl_interfaces_msg_LogConstants.ERROR = 40
+rcl_interfaces_msg_LogConstants.FATAL = 50
+
+class rcl_interfaces_msg_LoggerLevelConstants {}
+rcl_interfaces_msg_LoggerLevelConstants.LOG_LEVEL_UNKNOWN = 0
+rcl_interfaces_msg_LoggerLevelConstants.LOG_LEVEL_DEBUG = 10
+rcl_interfaces_msg_LoggerLevelConstants.LOG_LEVEL_INFO = 20
+rcl_interfaces_msg_LoggerLevelConstants.LOG_LEVEL_WARN = 30
+rcl_interfaces_msg_LoggerLevelConstants.LOG_LEVEL_ERROR = 40
+rcl_interfaces_msg_LoggerLevelConstants.LOG_LEVEL_FATAL = 50
+
+class rcl_interfaces_msg_ParameterTypeConstants {}
+rcl_interfaces_msg_ParameterTypeConstants.PARAMETER_NOT_SET = 0
+rcl_interfaces_msg_ParameterTypeConstants.PARAMETER_BOOL = 1
+rcl_interfaces_msg_ParameterTypeConstants.PARAMETER_INTEGER = 2
+rcl_interfaces_msg_ParameterTypeConstants.PARAMETER_DOUBLE = 3
+rcl_interfaces_msg_ParameterTypeConstants.PARAMETER_STRING = 4
+rcl_interfaces_msg_ParameterTypeConstants.PARAMETER_BYTE_ARRAY = 5
+rcl_interfaces_msg_ParameterTypeConstants.PARAMETER_BOOL_ARRAY = 6
+rcl_interfaces_msg_ParameterTypeConstants.PARAMETER_INTEGER_ARRAY = 7
+rcl_interfaces_msg_ParameterTypeConstants.PARAMETER_DOUBLE_ARRAY = 8
+rcl_interfaces_msg_ParameterTypeConstants.PARAMETER_STRING_ARRAY = 9
+
+class rcl_interfaces_srv_ListParameters_RequestConstants {}
+rcl_interfaces_srv_ListParameters_RequestConstants.DEPTH_RECURSIVE = 0
+
+class sensor_msgs_msg_BatteryStateConstants {}
+sensor_msgs_msg_BatteryStateConstants.POWER_SUPPLY_STATUS_UNKNOWN = 0
+sensor_msgs_msg_BatteryStateConstants.POWER_SUPPLY_STATUS_CHARGING = 1
+sensor_msgs_msg_BatteryStateConstants.POWER_SUPPLY_STATUS_DISCHARGING = 2
+sensor_msgs_msg_BatteryStateConstants.POWER_SUPPLY_STATUS_NOT_CHARGING = 3
+sensor_msgs_msg_BatteryStateConstants.POWER_SUPPLY_STATUS_FULL = 4
+sensor_msgs_msg_BatteryStateConstants.POWER_SUPPLY_HEALTH_UNKNOWN = 0
+sensor_msgs_msg_BatteryStateConstants.POWER_SUPPLY_HEALTH_GOOD = 1
+sensor_msgs_msg_BatteryStateConstants.POWER_SUPPLY_HEALTH_OVERHEAT = 2
+sensor_msgs_msg_BatteryStateConstants.POWER_SUPPLY_HEALTH_DEAD = 3
+sensor_msgs_msg_BatteryStateConstants.POWER_SUPPLY_HEALTH_OVERVOLTAGE = 4
+sensor_msgs_msg_BatteryStateConstants.POWER_SUPPLY_HEALTH_UNSPEC_FAILURE = 5
+sensor_msgs_msg_BatteryStateConstants.POWER_SUPPLY_HEALTH_COLD = 6
+sensor_msgs_msg_BatteryStateConstants.POWER_SUPPLY_HEALTH_WATCHDOG_TIMER_EXPIRE = 7
+sensor_msgs_msg_BatteryStateConstants.POWER_SUPPLY_HEALTH_SAFETY_TIMER_EXPIRE = 8
+sensor_msgs_msg_BatteryStateConstants.POWER_SUPPLY_TECHNOLOGY_UNKNOWN = 0
+sensor_msgs_msg_BatteryStateConstants.POWER_SUPPLY_TECHNOLOGY_NIMH = 1
+sensor_msgs_msg_BatteryStateConstants.POWER_SUPPLY_TECHNOLOGY_LION = 2
+sensor_msgs_msg_BatteryStateConstants.POWER_SUPPLY_TECHNOLOGY_LIPO = 3
+sensor_msgs_msg_BatteryStateConstants.POWER_SUPPLY_TECHNOLOGY_LIFE = 4
+sensor_msgs_msg_BatteryStateConstants.POWER_SUPPLY_TECHNOLOGY_NICD = 5
+sensor_msgs_msg_BatteryStateConstants.POWER_SUPPLY_TECHNOLOGY_LIMN = 6
+sensor_msgs_msg_BatteryStateConstants.POWER_SUPPLY_TECHNOLOGY_TERNARY = 7
+sensor_msgs_msg_BatteryStateConstants.POWER_SUPPLY_TECHNOLOGY_VRLA = 8
+
+class sensor_msgs_msg_JoyFeedbackConstants {}
+sensor_msgs_msg_JoyFeedbackConstants.TYPE_LED = 0
+sensor_msgs_msg_JoyFeedbackConstants.TYPE_RUMBLE = 1
+sensor_msgs_msg_JoyFeedbackConstants.TYPE_BUZZER = 2
+
+class sensor_msgs_msg_NavSatFixConstants {}
+sensor_msgs_msg_NavSatFixConstants.COVARIANCE_TYPE_UNKNOWN = 0
+sensor_msgs_msg_NavSatFixConstants.COVARIANCE_TYPE_APPROXIMATED = 1
+sensor_msgs_msg_NavSatFixConstants.COVARIANCE_TYPE_DIAGONAL_KNOWN = 2
+sensor_msgs_msg_NavSatFixConstants.COVARIANCE_TYPE_KNOWN = 3
+
+class sensor_msgs_msg_NavSatStatusConstants {}
+sensor_msgs_msg_NavSatStatusConstants.STATUS_NO_FIX = -1
+sensor_msgs_msg_NavSatStatusConstants.STATUS_FIX = 0
+sensor_msgs_msg_NavSatStatusConstants.STATUS_SBAS_FIX = 1
+sensor_msgs_msg_NavSatStatusConstants.STATUS_GBAS_FIX = 2
+sensor_msgs_msg_NavSatStatusConstants.SERVICE_GPS = 1
+sensor_msgs_msg_NavSatStatusConstants.SERVICE_GLONASS = 2
+sensor_msgs_msg_NavSatStatusConstants.SERVICE_COMPASS = 4
+sensor_msgs_msg_NavSatStatusConstants.SERVICE_GALILEO = 8
+
+class sensor_msgs_msg_PointFieldConstants {}
+sensor_msgs_msg_PointFieldConstants.INT8 = 1
+sensor_msgs_msg_PointFieldConstants.UINT8 = 2
+sensor_msgs_msg_PointFieldConstants.INT16 = 3
+sensor_msgs_msg_PointFieldConstants.UINT16 = 4
+sensor_msgs_msg_PointFieldConstants.INT32 = 5
+sensor_msgs_msg_PointFieldConstants.UINT32 = 6
+sensor_msgs_msg_PointFieldConstants.FLOAT32 = 7
+sensor_msgs_msg_PointFieldConstants.FLOAT64 = 8
+
+class sensor_msgs_msg_RangeConstants {}
+sensor_msgs_msg_RangeConstants.ULTRASOUND = 0
+sensor_msgs_msg_RangeConstants.INFRARED = 1
+
+class service_msgs_msg_ServiceEventInfoConstants {}
+service_msgs_msg_ServiceEventInfoConstants.REQUEST_SENT = 0
+service_msgs_msg_ServiceEventInfoConstants.REQUEST_RECEIVED = 1
+service_msgs_msg_ServiceEventInfoConstants.RESPONSE_SENT = 2
+service_msgs_msg_ServiceEventInfoConstants.RESPONSE_RECEIVED = 3
+
+class shape_msgs_msg_SolidPrimitiveConstants {}
+shape_msgs_msg_SolidPrimitiveConstants.BOX = 1
+shape_msgs_msg_SolidPrimitiveConstants.SPHERE = 2
+shape_msgs_msg_SolidPrimitiveConstants.CYLINDER = 3
+shape_msgs_msg_SolidPrimitiveConstants.CONE = 4
+shape_msgs_msg_SolidPrimitiveConstants.PRISM = 5
+shape_msgs_msg_SolidPrimitiveConstants.BOX_X = 0
+shape_msgs_msg_SolidPrimitiveConstants.BOX_Y = 1
+shape_msgs_msg_SolidPrimitiveConstants.BOX_Z = 2
+shape_msgs_msg_SolidPrimitiveConstants.SPHERE_RADIUS = 0
+shape_msgs_msg_SolidPrimitiveConstants.CYLINDER_HEIGHT = 0
+shape_msgs_msg_SolidPrimitiveConstants.CYLINDER_RADIUS = 1
+shape_msgs_msg_SolidPrimitiveConstants.CONE_HEIGHT = 0
+shape_msgs_msg_SolidPrimitiveConstants.CONE_RADIUS = 1
+shape_msgs_msg_SolidPrimitiveConstants.PRISM_HEIGHT = 0
+
+class statistics_msgs_msg_StatisticDataTypeConstants {}
+statistics_msgs_msg_StatisticDataTypeConstants.STATISTICS_DATA_TYPE_UNINITIALIZED = 0
+statistics_msgs_msg_StatisticDataTypeConstants.STATISTICS_DATA_TYPE_AVERAGE = 1
+statistics_msgs_msg_StatisticDataTypeConstants.STATISTICS_DATA_TYPE_MINIMUM = 2
+statistics_msgs_msg_StatisticDataTypeConstants.STATISTICS_DATA_TYPE_MAXIMUM = 3
+statistics_msgs_msg_StatisticDataTypeConstants.STATISTICS_DATA_TYPE_STDDEV = 4
+statistics_msgs_msg_StatisticDataTypeConstants.STATISTICS_DATA_TYPE_SAMPLE_COUNT = 5
+
+class test_msgs_msg_ConstantsConstants {}
+test_msgs_msg_ConstantsConstants.BOOL_CONST = true
+test_msgs_msg_ConstantsConstants.BYTE_CONST = 50
+test_msgs_msg_ConstantsConstants.CHAR_CONST = 100
+test_msgs_msg_ConstantsConstants.FLOAT32_CONST = 1.125
+test_msgs_msg_ConstantsConstants.FLOAT64_CONST = 1.125
+test_msgs_msg_ConstantsConstants.INT8_CONST = -50
+test_msgs_msg_ConstantsConstants.UINT8_CONST = 200
+test_msgs_msg_ConstantsConstants.INT16_CONST = -1000
+test_msgs_msg_ConstantsConstants.UINT16_CONST = 2000
+test_msgs_msg_ConstantsConstants.INT32_CONST = -30000
+test_msgs_msg_ConstantsConstants.UINT32_CONST = 60000
+test_msgs_msg_ConstantsConstants.INT64_CONST = -40000000
+test_msgs_msg_ConstantsConstants.UINT64_CONST = 50000000
+
+class test_msgs_msg_StringsConstants {}
+test_msgs_msg_StringsConstants.STRING_CONST = "Hello world!"
+
+class tf2_msgs_msg_TF2ErrorConstants {}
+tf2_msgs_msg_TF2ErrorConstants.NO_ERROR = 0
+tf2_msgs_msg_TF2ErrorConstants.LOOKUP_ERROR = 1
+tf2_msgs_msg_TF2ErrorConstants.CONNECTIVITY_ERROR = 2
+tf2_msgs_msg_TF2ErrorConstants.EXTRAPOLATION_ERROR = 3
+tf2_msgs_msg_TF2ErrorConstants.INVALID_ARGUMENT_ERROR = 4
+tf2_msgs_msg_TF2ErrorConstants.TIMEOUT_ERROR = 5
+tf2_msgs_msg_TF2ErrorConstants.TRANSFORM_ERROR = 6
+
+class type_description_interfaces_msg_FieldTypeConstants {}
+type_description_interfaces_msg_FieldTypeConstants.FIELD_TYPE_NOT_SET = 0
+type_description_interfaces_msg_FieldTypeConstants.FIELD_TYPE_NESTED_TYPE = 1
+type_description_interfaces_msg_FieldTypeConstants.FIELD_TYPE_INT8 = 2
+type_description_interfaces_msg_FieldTypeConstants.FIELD_TYPE_UINT8 = 3
+type_description_interfaces_msg_FieldTypeConstants.FIELD_TYPE_INT16 = 4
+type_description_interfaces_msg_FieldTypeConstants.FIELD_TYPE_UINT16 = 5
+type_description_interfaces_msg_FieldTypeConstants.FIELD_TYPE_INT32 = 6
+type_description_interfaces_msg_FieldTypeConstants.FIELD_TYPE_UINT32 = 7
+type_description_interfaces_msg_FieldTypeConstants.FIELD_TYPE_INT64 = 8
+type_description_interfaces_msg_FieldTypeConstants.FIELD_TYPE_UINT64 = 9
+type_description_interfaces_msg_FieldTypeConstants.FIELD_TYPE_FLOAT = 10
+type_description_interfaces_msg_FieldTypeConstants.FIELD_TYPE_DOUBLE = 11
+type_description_interfaces_msg_FieldTypeConstants.FIELD_TYPE_LONG_DOUBLE = 12
+type_description_interfaces_msg_FieldTypeConstants.FIELD_TYPE_CHAR = 13
+type_description_interfaces_msg_FieldTypeConstants.FIELD_TYPE_WCHAR = 14
+type_description_interfaces_msg_FieldTypeConstants.FIELD_TYPE_BOOLEAN = 15
+type_description_interfaces_msg_FieldTypeConstants.FIELD_TYPE_BYTE = 16
+type_description_interfaces_msg_FieldTypeConstants.FIELD_TYPE_STRING = 17
+type_description_interfaces_msg_FieldTypeConstants.FIELD_TYPE_WSTRING = 18
+type_description_interfaces_msg_FieldTypeConstants.FIELD_TYPE_FIXED_STRING = 19
+type_description_interfaces_msg_FieldTypeConstants.FIELD_TYPE_FIXED_WSTRING = 20
+type_description_interfaces_msg_FieldTypeConstants.FIELD_TYPE_BOUNDED_STRING = 21
+type_description_interfaces_msg_FieldTypeConstants.FIELD_TYPE_BOUNDED_WSTRING = 22
+type_description_interfaces_msg_FieldTypeConstants.FIELD_TYPE_NESTED_TYPE_ARRAY = 49
+type_description_interfaces_msg_FieldTypeConstants.FIELD_TYPE_INT8_ARRAY = 50
+type_description_interfaces_msg_FieldTypeConstants.FIELD_TYPE_UINT8_ARRAY = 51
+type_description_interfaces_msg_FieldTypeConstants.FIELD_TYPE_INT16_ARRAY = 52
+type_description_interfaces_msg_FieldTypeConstants.FIELD_TYPE_UINT16_ARRAY = 53
+type_description_interfaces_msg_FieldTypeConstants.FIELD_TYPE_INT32_ARRAY = 54
+type_description_interfaces_msg_FieldTypeConstants.FIELD_TYPE_UINT32_ARRAY = 55
+type_description_interfaces_msg_FieldTypeConstants.FIELD_TYPE_INT64_ARRAY = 56
+type_description_interfaces_msg_FieldTypeConstants.FIELD_TYPE_UINT64_ARRAY = 57
+type_description_interfaces_msg_FieldTypeConstants.FIELD_TYPE_FLOAT_ARRAY = 58
+type_description_interfaces_msg_FieldTypeConstants.FIELD_TYPE_DOUBLE_ARRAY = 59
+type_description_interfaces_msg_FieldTypeConstants.FIELD_TYPE_LONG_DOUBLE_ARRAY = 60
+type_description_interfaces_msg_FieldTypeConstants.FIELD_TYPE_CHAR_ARRAY = 61
+type_description_interfaces_msg_FieldTypeConstants.FIELD_TYPE_WCHAR_ARRAY = 62
+type_description_interfaces_msg_FieldTypeConstants.FIELD_TYPE_BOOLEAN_ARRAY = 63
+type_description_interfaces_msg_FieldTypeConstants.FIELD_TYPE_BYTE_ARRAY = 64
+type_description_interfaces_msg_FieldTypeConstants.FIELD_TYPE_STRING_ARRAY = 65
+type_description_interfaces_msg_FieldTypeConstants.FIELD_TYPE_WSTRING_ARRAY = 66
+type_description_interfaces_msg_FieldTypeConstants.FIELD_TYPE_FIXED_STRING_ARRAY = 67
+type_description_interfaces_msg_FieldTypeConstants.FIELD_TYPE_FIXED_WSTRING_ARRAY = 68
+type_description_interfaces_msg_FieldTypeConstants.FIELD_TYPE_BOUNDED_STRING_ARRAY = 69
+type_description_interfaces_msg_FieldTypeConstants.FIELD_TYPE_BOUNDED_WSTRING_ARRAY = 70
+type_description_interfaces_msg_FieldTypeConstants.FIELD_TYPE_NESTED_TYPE_BOUNDED_SEQUENCE = 97
+type_description_interfaces_msg_FieldTypeConstants.FIELD_TYPE_INT8_BOUNDED_SEQUENCE = 98
+type_description_interfaces_msg_FieldTypeConstants.FIELD_TYPE_UINT8_BOUNDED_SEQUENCE = 99
+type_description_interfaces_msg_FieldTypeConstants.FIELD_TYPE_INT16_BOUNDED_SEQUENCE = 100
+type_description_interfaces_msg_FieldTypeConstants.FIELD_TYPE_UINT16_BOUNDED_SEQUENCE = 101
+type_description_interfaces_msg_FieldTypeConstants.FIELD_TYPE_INT32_BOUNDED_SEQUENCE = 102
+type_description_interfaces_msg_FieldTypeConstants.FIELD_TYPE_UINT32_BOUNDED_SEQUENCE = 103
+type_description_interfaces_msg_FieldTypeConstants.FIELD_TYPE_INT64_BOUNDED_SEQUENCE = 104
+type_description_interfaces_msg_FieldTypeConstants.FIELD_TYPE_UINT64_BOUNDED_SEQUENCE = 105
+type_description_interfaces_msg_FieldTypeConstants.FIELD_TYPE_FLOAT_BOUNDED_SEQUENCE = 106
+type_description_interfaces_msg_FieldTypeConstants.FIELD_TYPE_DOUBLE_BOUNDED_SEQUENCE = 107
+type_description_interfaces_msg_FieldTypeConstants.FIELD_TYPE_LONG_DOUBLE_BOUNDED_SEQUENCE = 108
+type_description_interfaces_msg_FieldTypeConstants.FIELD_TYPE_CHAR_BOUNDED_SEQUENCE = 109
+type_description_interfaces_msg_FieldTypeConstants.FIELD_TYPE_WCHAR_BOUNDED_SEQUENCE = 110
+type_description_interfaces_msg_FieldTypeConstants.FIELD_TYPE_BOOLEAN_BOUNDED_SEQUENCE = 111
+type_description_interfaces_msg_FieldTypeConstants.FIELD_TYPE_BYTE_BOUNDED_SEQUENCE = 112
+type_description_interfaces_msg_FieldTypeConstants.FIELD_TYPE_STRING_BOUNDED_SEQUENCE = 113
+type_description_interfaces_msg_FieldTypeConstants.FIELD_TYPE_WSTRING_BOUNDED_SEQUENCE = 114
+type_description_interfaces_msg_FieldTypeConstants.FIELD_TYPE_FIXED_STRING_BOUNDED_SEQUENCE = 115
+type_description_interfaces_msg_FieldTypeConstants.FIELD_TYPE_FIXED_WSTRING_BOUNDED_SEQUENCE = 116
+type_description_interfaces_msg_FieldTypeConstants.FIELD_TYPE_BOUNDED_STRING_BOUNDED_SEQUENCE = 117
+type_description_interfaces_msg_FieldTypeConstants.FIELD_TYPE_BOUNDED_WSTRING_BOUNDED_SEQUENCE = 118
+type_description_interfaces_msg_FieldTypeConstants.FIELD_TYPE_NESTED_TYPE_UNBOUNDED_SEQUENCE = 145
+type_description_interfaces_msg_FieldTypeConstants.FIELD_TYPE_INT8_UNBOUNDED_SEQUENCE = 146
+type_description_interfaces_msg_FieldTypeConstants.FIELD_TYPE_UINT8_UNBOUNDED_SEQUENCE = 147
+type_description_interfaces_msg_FieldTypeConstants.FIELD_TYPE_INT16_UNBOUNDED_SEQUENCE = 148
+type_description_interfaces_msg_FieldTypeConstants.FIELD_TYPE_UINT16_UNBOUNDED_SEQUENCE = 149
+type_description_interfaces_msg_FieldTypeConstants.FIELD_TYPE_INT32_UNBOUNDED_SEQUENCE = 150
+type_description_interfaces_msg_FieldTypeConstants.FIELD_TYPE_UINT32_UNBOUNDED_SEQUENCE = 151
+type_description_interfaces_msg_FieldTypeConstants.FIELD_TYPE_INT64_UNBOUNDED_SEQUENCE = 152
+type_description_interfaces_msg_FieldTypeConstants.FIELD_TYPE_UINT64_UNBOUNDED_SEQUENCE = 153
+type_description_interfaces_msg_FieldTypeConstants.FIELD_TYPE_FLOAT_UNBOUNDED_SEQUENCE = 154
+type_description_interfaces_msg_FieldTypeConstants.FIELD_TYPE_DOUBLE_UNBOUNDED_SEQUENCE = 155
+type_description_interfaces_msg_FieldTypeConstants.FIELD_TYPE_LONG_DOUBLE_UNBOUNDED_SEQUENCE = 156
+type_description_interfaces_msg_FieldTypeConstants.FIELD_TYPE_CHAR_UNBOUNDED_SEQUENCE = 157
+type_description_interfaces_msg_FieldTypeConstants.FIELD_TYPE_WCHAR_UNBOUNDED_SEQUENCE = 158
+type_description_interfaces_msg_FieldTypeConstants.FIELD_TYPE_BOOLEAN_UNBOUNDED_SEQUENCE = 159
+type_description_interfaces_msg_FieldTypeConstants.FIELD_TYPE_BYTE_UNBOUNDED_SEQUENCE = 160
+type_description_interfaces_msg_FieldTypeConstants.FIELD_TYPE_STRING_UNBOUNDED_SEQUENCE = 161
+type_description_interfaces_msg_FieldTypeConstants.FIELD_TYPE_WSTRING_UNBOUNDED_SEQUENCE = 162
+type_description_interfaces_msg_FieldTypeConstants.FIELD_TYPE_FIXED_STRING_UNBOUNDED_SEQUENCE = 163
+type_description_interfaces_msg_FieldTypeConstants.FIELD_TYPE_FIXED_WSTRING_UNBOUNDED_SEQUENCE = 164
+type_description_interfaces_msg_FieldTypeConstants.FIELD_TYPE_BOUNDED_STRING_UNBOUNDED_SEQUENCE = 165
+type_description_interfaces_msg_FieldTypeConstants.FIELD_TYPE_BOUNDED_WSTRING_UNBOUNDED_SEQUENCE = 166
+
+class visualization_msgs_msg_ImageMarkerConstants {}
+visualization_msgs_msg_ImageMarkerConstants.CIRCLE = 0
+visualization_msgs_msg_ImageMarkerConstants.LINE_STRIP = 1
+visualization_msgs_msg_ImageMarkerConstants.LINE_LIST = 2
+visualization_msgs_msg_ImageMarkerConstants.POLYGON = 3
+visualization_msgs_msg_ImageMarkerConstants.POINTS = 4
+visualization_msgs_msg_ImageMarkerConstants.ADD = 0
+visualization_msgs_msg_ImageMarkerConstants.REMOVE = 1
+
+class visualization_msgs_msg_InteractiveMarkerControlConstants {}
+visualization_msgs_msg_InteractiveMarkerControlConstants.INHERIT = 0
+visualization_msgs_msg_InteractiveMarkerControlConstants.FIXED = 1
+visualization_msgs_msg_InteractiveMarkerControlConstants.VIEW_FACING = 2
+visualization_msgs_msg_InteractiveMarkerControlConstants.NONE = 0
+visualization_msgs_msg_InteractiveMarkerControlConstants.MENU = 1
+visualization_msgs_msg_InteractiveMarkerControlConstants.BUTTON = 2
+visualization_msgs_msg_InteractiveMarkerControlConstants.MOVE_AXIS = 3
+visualization_msgs_msg_InteractiveMarkerControlConstants.MOVE_PLANE = 4
+visualization_msgs_msg_InteractiveMarkerControlConstants.ROTATE_AXIS = 5
+visualization_msgs_msg_InteractiveMarkerControlConstants.MOVE_ROTATE = 6
+visualization_msgs_msg_InteractiveMarkerControlConstants.MOVE_3D = 7
+visualization_msgs_msg_InteractiveMarkerControlConstants.ROTATE_3D = 8
+visualization_msgs_msg_InteractiveMarkerControlConstants.MOVE_ROTATE_3D = 9
+
+class visualization_msgs_msg_InteractiveMarkerFeedbackConstants {}
+visualization_msgs_msg_InteractiveMarkerFeedbackConstants.KEEP_ALIVE = 0
+visualization_msgs_msg_InteractiveMarkerFeedbackConstants.POSE_UPDATE = 1
+visualization_msgs_msg_InteractiveMarkerFeedbackConstants.MENU_SELECT = 2
+visualization_msgs_msg_InteractiveMarkerFeedbackConstants.BUTTON_CLICK = 3
+visualization_msgs_msg_InteractiveMarkerFeedbackConstants.MOUSE_DOWN = 4
+visualization_msgs_msg_InteractiveMarkerFeedbackConstants.MOUSE_UP = 5
+
+class visualization_msgs_msg_InteractiveMarkerUpdateConstants {}
+visualization_msgs_msg_InteractiveMarkerUpdateConstants.KEEP_ALIVE = 0
+visualization_msgs_msg_InteractiveMarkerUpdateConstants.UPDATE = 1
+
+class visualization_msgs_msg_MarkerConstants {}
+visualization_msgs_msg_MarkerConstants.ARROW = 0
+visualization_msgs_msg_MarkerConstants.CUBE = 1
+visualization_msgs_msg_MarkerConstants.SPHERE = 2
+visualization_msgs_msg_MarkerConstants.CYLINDER = 3
+visualization_msgs_msg_MarkerConstants.LINE_STRIP = 4
+visualization_msgs_msg_MarkerConstants.LINE_LIST = 5
+visualization_msgs_msg_MarkerConstants.CUBE_LIST = 6
+visualization_msgs_msg_MarkerConstants.SPHERE_LIST = 7
+visualization_msgs_msg_MarkerConstants.POINTS = 8
+visualization_msgs_msg_MarkerConstants.TEXT_VIEW_FACING = 9
+visualization_msgs_msg_MarkerConstants.MESH_RESOURCE = 10
+visualization_msgs_msg_MarkerConstants.TRIANGLE_LIST = 11
+visualization_msgs_msg_MarkerConstants.ADD = 0
+visualization_msgs_msg_MarkerConstants.MODIFY = 0
+visualization_msgs_msg_MarkerConstants.DELETE = 2
+visualization_msgs_msg_MarkerConstants.DELETEALL = 3
+
+class visualization_msgs_msg_MenuEntryConstants {}
+visualization_msgs_msg_MenuEntryConstants.FEEDBACK = 0
+visualization_msgs_msg_MenuEntryConstants.ROSRUN = 1
+visualization_msgs_msg_MenuEntryConstants.ROSLAUNCH = 2
+
+module.exports = {
+  action_msgs: {
+    msg: {
+      GoalStatusConstants: action_msgs_msg_GoalStatusConstants,
+    },
+    srv: {
+      CancelGoal_ResponseConstants: action_msgs_srv_CancelGoal_ResponseConstants,
+    },
+  },
+  actionlib_msgs: {
+    msg: {
+      GoalStatusConstants: actionlib_msgs_msg_GoalStatusConstants,
+    },
+  },
+  diagnostic_msgs: {
+    msg: {
+      DiagnosticStatusConstants: diagnostic_msgs_msg_DiagnosticStatusConstants,
+    },
+  },
+  lifecycle_msgs: {
+    msg: {
+      StateConstants: lifecycle_msgs_msg_StateConstants,
+      TransitionConstants: lifecycle_msgs_msg_TransitionConstants,
+    },
+  },
+  map_msgs: {
+    msg: {
+      PointCloud2UpdateConstants: map_msgs_msg_PointCloud2UpdateConstants,
+    },
+  },
+  nav_msgs: {
+    srv: {
+      LoadMap_ResponseConstants: nav_msgs_srv_LoadMap_ResponseConstants,
+    },
+  },
+  rcl_interfaces: {
+    msg: {
+      LogConstants: rcl_interfaces_msg_LogConstants,
+      LoggerLevelConstants: rcl_interfaces_msg_LoggerLevelConstants,
+      ParameterTypeConstants: rcl_interfaces_msg_ParameterTypeConstants,
+    },
+    srv: {
+      ListParameters_RequestConstants: rcl_interfaces_srv_ListParameters_RequestConstants,
+    },
+  },
+  sensor_msgs: {
+    msg: {
+      BatteryStateConstants: sensor_msgs_msg_BatteryStateConstants,
+      JoyFeedbackConstants: sensor_msgs_msg_JoyFeedbackConstants,
+      NavSatFixConstants: sensor_msgs_msg_NavSatFixConstants,
+      NavSatStatusConstants: sensor_msgs_msg_NavSatStatusConstants,
+      PointFieldConstants: sensor_msgs_msg_PointFieldConstants,
+      RangeConstants: sensor_msgs_msg_RangeConstants,
+    },
+  },
+  service_msgs: {
+    msg: {
+      ServiceEventInfoConstants: service_msgs_msg_ServiceEventInfoConstants,
+    },
+  },
+  shape_msgs: {
+    msg: {
+      SolidPrimitiveConstants: shape_msgs_msg_SolidPrimitiveConstants,
+    },
+  },
+  statistics_msgs: {
+    msg: {
+      StatisticDataTypeConstants: statistics_msgs_msg_StatisticDataTypeConstants,
+    },
+  },
+  test_msgs: {
+    msg: {
+      ConstantsConstants: test_msgs_msg_ConstantsConstants,
+      StringsConstants: test_msgs_msg_StringsConstants,
+    },
+  },
+  tf2_msgs: {
+    msg: {
+      TF2ErrorConstants: tf2_msgs_msg_TF2ErrorConstants,
+    },
+  },
+  type_description_interfaces: {
+    msg: {
+      FieldTypeConstants: type_description_interfaces_msg_FieldTypeConstants,
+    },
+  },
+  visualization_msgs: {
+    msg: {
+      ImageMarkerConstants: visualization_msgs_msg_ImageMarkerConstants,
+      InteractiveMarkerControlConstants: visualization_msgs_msg_InteractiveMarkerControlConstants,
+      InteractiveMarkerFeedbackConstants: visualization_msgs_msg_InteractiveMarkerFeedbackConstants,
+      InteractiveMarkerUpdateConstants: visualization_msgs_msg_InteractiveMarkerUpdateConstants,
+      MarkerConstants: visualization_msgs_msg_MarkerConstants,
+      MenuEntryConstants: visualization_msgs_msg_MenuEntryConstants,
+    },
+  },
+};

@@ -67,7 +67,7 @@ describe('rclnodejs generate-messages binary-script tests', function () {
     });
 
     let tgz;
-    const regex = /^rclnodejs-\d+.\d+.\d+.tgz/;
+    const regex = /^.*rclnodejs-\d+.\d+.\d+.tgz/;
     for (let file of fs.readdirSync(this.tmpPkg)) {
       if (file.match(regex)) {
         tgz = file;
@@ -151,7 +151,7 @@ describe('rclnodejs generate-messages binary-script tests', function () {
 });
 
 function createGeneratedFolderPath(pkgFolder) {
-  return path.join(pkgFolder, 'node_modules', 'rclnodejs', GEN_FOLDER);
+  return path.join(pkgFolder, 'node_modules', '@sixriver/rclnodejs', GEN_FOLDER);
 }
 
 function createScriptFolderPath(pkgFolder) {

@@ -648,4 +648,3 @@ const tsdGenerator = {
 
 module.exports = tsdGenerator;
 
-generateAll()
