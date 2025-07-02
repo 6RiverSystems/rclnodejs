@@ -135,10 +135,17 @@ async function generateMessageJSStruct(messageInfo, dir) {
 
 function generateMessageJSStructFromSpec(messageInfo, dir, spec) {
   dir = path.join(dir, `${spec.baseType.pkgName}`);
+  let subFolder = "msg";
+  // Special tags to look at that specific folder
+  let arr = ["srv", "srvs", "action", "msg"];
+  if (arr.includes(messageInfo.subFolder)){
+    subFolder = messageInfo.subFolder;
+  }
+
   const fileName =
     spec.baseType.pkgName +
     '__' +
-    messageInfo.subFolder +
+    subFolder+
     '__' +
     spec.msgName +
     '.js';
