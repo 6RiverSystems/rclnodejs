@@ -119,10 +119,12 @@ function savePkgInfoAsTSD(pkgInfos, fd, jfd) {
         const type = rosInterface.type();
         const fullInterfaceName = `${type.pkgName}/${type.subFolder}/${type.interfaceName}`;
         let fullInterfacePath = `${type.pkgName}.${type.subFolder}.${type.interfaceName}`;
+        if (!(["srv", "srvs", "action"].includes(type.subFolder))){
+          fullInterfacePath = `${type.pkgName}.msg.${type.interfaceName}`
+        }
         const fullInterfaceConstructor = fullInterfacePath + 'Constructor';
 
         if (isMsgInterface(rosInterface)) {
-          fullInterfacePath = `${type.pkgName}.msg.${type.interfaceName}`;
           // create message interface
           saveMsgAsTSD(rosInterface, fd);
           saveMsgConstructorAsTSD(rosInterface, fd, jfd);
