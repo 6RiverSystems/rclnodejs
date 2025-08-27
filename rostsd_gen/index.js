@@ -118,7 +118,10 @@ function savePkgInfoAsTSD(pkgInfos, fd, jfd) {
       for (const rosInterface of pkgInfo.subfolders.get(subfolder)) {
         const type = rosInterface.type();
         const fullInterfaceName = `${type.pkgName}/${type.subFolder}/${type.interfaceName}`;
-        const fullInterfacePath = `${type.pkgName}.${type.subFolder}.${type.interfaceName}`;
+        let fullInterfacePath = `${type.pkgName}.${type.subFolder}.${type.interfaceName}`;
+        if (!(["srv", "srvs", "action"].includes(type.subFolder))){
+          fullInterfacePath = `${type.pkgName}.msg.${type.interfaceName}`
+        }
         const fullInterfaceConstructor = fullInterfacePath + 'Constructor';
 
         if (isMsgInterface(rosInterface)) {
